@@ -23,14 +23,10 @@ jobs:
           java-version: '11'
 
       # Step 3: SonarQube scan (SonarCloud)
-      - name: SonarQube scan
+      - name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@master
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: |
-          sonar-scanner \
-            -Dsonar.projectKey=nodejs-toy \
-            -Dsonar.organization=nodejs-toy \
-            -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} //Sonar Token generated 
+          SONAR_HOST_URL: https://sonarcloud.io
 
 
