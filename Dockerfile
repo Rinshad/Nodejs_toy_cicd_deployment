@@ -5,13 +5,13 @@ FROM node:16
 WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY package*.json ./
+COPY app/package*.json ./
 
 # Install dependencies
 RUN npm install
 
 # Copy the entire React app source code to the container
-COPY ./app .
+COPY app/* .
 
 # Build the React app
 RUN npm run build
