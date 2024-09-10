@@ -38,7 +38,7 @@ jobs:
       # Step 6: Run Trivy image scan
       - name: Scan Docker image with Trivy
         run: |
-          trivy image --format json nodejs-app-trivy-result.json ${{ secrets.DOCKER_USERNAME }}/nodejs-toy-app:latest
+          trivy image --format json --output nodejs-app-trivy-result.json ${{ secrets.DOCKER_USERNAME }}/nodejs-toy-app:latest
 
       # Step 7: Log in to Docker Hub
       - name: Log in to Docker Hub
