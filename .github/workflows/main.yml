@@ -23,4 +23,9 @@ jobs:
         env: 
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+      # Step 3: Build Docker image
+      - name: Build Docker image
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/nodejs-toy-app:latest .
+
 
