@@ -18,6 +18,8 @@ jobs:
       # Step 3: SonarQube scan (SonarCloud)
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
+        with:
+          projectBaseDir: app 
         env: 
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
